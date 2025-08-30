@@ -1,4 +1,4 @@
-# 📄 Document Summary Assistant  
+# ✨ DocuSmart Assistant 
 
 🔗 **Live Demo:** [document-summarizer-ten.vercel.app](https://document-summarizer-ten.vercel.app/)  
 
@@ -49,6 +49,16 @@ An interactive web application that turns **PDF and image documents** into clear
   - [Tesseract.js](https://tesseract.projectnaptha.com/) – OCR  
 - **AI Service:** [Cohere Summarization API](https://cohere.com/)  
 - **Deployment:** [Vercel](https://vercel.com/)  
+
+---
+
+## 📸 Screenshots  
+
+| Upload Document | Select Options | Generated Summary |  
+| :-------------: | :------------: | :---------------: |  
+| ![Upload Screenshot](https://github.com/user-attachments/assets/62668a21-7baa-40ee-94b8-033bc4d4c5d9) | ![Options Screenshot](https://github.com/user-attachments/assets/2b15a077-f354-44cf-8a65-57fc8ff76248) | ![Summary Screenshot](https://github.com/user-attachments/assets/9c2e8879-70b2-4f21-bdc5-7f4ec731a48a) |  
+
+
 
 ---
 
