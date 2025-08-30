@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuSmart – AI Summary Assistant</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="header-title">✨ DocuSmart Assistant</h1>
+            <p class="header-subtitle">Upload your files and get AI-powered summaries in seconds</p>
+        </header>
+
+        <main class="main-content">
+            <section class="panel upload-panel">
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-icon">📂</div>
+                    <h3>Drag & Drop your file here</h3>
+                    <p>Or click to browse (PDF / PNG / JPG / JPEG)</p>
+                    <input type="file" id="fileSelector" accept=".pdf,.png,.jpg,.jpeg" hidden>
+                </div>
+                <div class="file-details" id="fileDisplay">
+                    <p><strong>File:</strong> <span id="fileName"></span></p>
+                    <p><strong>Size:</strong> <span id="fileSize"></span></p>
+                </div>
+            </section>
+
+            <section class="panel options-panel">
+                <h2>Choose Summary Length</h2>
+                <div class="button-group">
+                    <button class="length-button" data-length="short">Short</button>
+                    <button class="length-button active" data-length="medium">Medium</button>
+                    <button class="length-button" data-length="long">Long</button>
+                </div>
+
+                <button class="generate-button" id="generateButton" disabled>⚡ Generate Summary</button>
+                <div class="loading-state" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <p>AI is processing your document...</p>
+                </div>
+                <div class="error-message" id="errorAlert"></div>
+            </section>
+        </main>
+
+        <section class="panel result-panel" id="summaryPanel">
+            <div class="summary-header">
+                <h2>📝 Generated Summary</h2>
+                <span id="summaryLength" class="badge">Medium</span>
+            </div>
+            <div class="summary-content" id="summaryOutput"></div>
+
+            <div class="action-buttons">
+                <button id="copyButton" class="action-button">📋 Copy</button>
+                <button id="resetButton" class="action-button">🔄 New</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

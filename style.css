@@ -1,0 +1,360 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1d2671, #c33764);
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* App Container */
+.app-container {
+    max-width: 950px;
+    width: 100%;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease;
+}
+
+.header-subtitle {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    animation: slideIn 1s ease;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* Panels */
+.panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeUp 0.6s ease;
+}
+
+.upload-panel {
+    flex: 1;
+}
+
+.options-panel {
+    flex: 1;
+}
+
+/* Upload Zone */
+.upload-zone {
+    border: 2px dashed #ff8a00;
+    border-radius: 14px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-zone:hover {
+    background: rgba(255, 138, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.file-details {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    display: none;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.length-button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #222;
+    color: #eee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.length-button:hover {
+    background: #ff8a00;
+    color: #fff;
+}
+
+.length-button.active {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    color: #fff;
+}
+
+.generate-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.generate-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading */
+.loading-state {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #ff8a00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+/* Error */
+.error-message {
+    display: none;
+    background: #ff4d4d;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Result */
+.result-panel {
+    display: none;
+    opacity: 0;
+}
+
+.result-panel.show {
+    display: block;
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 12px;
+    background: #ff8a00;
+    color: #fff;
+    font-weight: bold;
+}
+
+.summary-content {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 18px;
+    margin-top: 15px;
+    border-left: 4px solid #e52e71;
+    border-radius: 10px;
+}
+
+.summary-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.summary-content li {
+    line-height: 1.6;
+    opacity: 0;
+    animation: popIn 0.5s ease-out forwards;
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.summary-content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff8a00;
+    font-size: 1.2em;
+}
+
+.summary-content li:nth-child(2) { animation-delay: 0.1s; }
+.summary-content li:nth-child(3) { animation-delay: 0.2s; }
+.summary-content li:nth-child(4) { animation-delay: 0.3s; }
+.summary-content li:nth-child(5) { animation-delay: 0.4s; }
+.summary-content li:nth-child(6) { animation-delay: 0.5s; }
+.summary-content li:nth-child(7) { animation-delay: 0.6s; }
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.action-button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ff8a00;
+    background: transparent;
+    color: #ff8a00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-button:hover {
+    background: #ff8a00;
+    color: #fff;
+    animation: pulse 1s infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(15px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulseAnim 1.5s infinite;
+}
+
+@keyframes pulseAnim {
+    0% {
+        box-shadow: 0 0 0 0 rgba(229, 46, 113, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(229, 46, 113, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(229, 46, 113, 0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
