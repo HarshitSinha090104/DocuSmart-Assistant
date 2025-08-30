@@ -1,6 +1,6 @@
 # ✨ DocuSmart Assistant 
 
-🔗 **Live Demo:** [document-summarizer-ten.vercel.app](https://document-summarizer-ten.vercel.app/)  
+🔗 **Live Demo:** [document-summarizer-ten.vercel.app](https://docu-smart-assistant.vercel.app/)  
 
 An interactive web application that turns **PDF and image documents** into clear, concise summaries using **AI-powered text extraction and summarization**.  
 
